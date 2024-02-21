@@ -1,0 +1,45 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Empresa APP</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="static/css/main.css" />
+    <link rel="shourcut icon" type="image/png" href="{% static 'images/renta_logo.jpeg' %}" />
+</head>
+<body>
+    <main id="principal">
+
+        <header>
+            <div>
+                <div class="container-logo-title">
+                    <img id="logo" src="static/images/renta_logo.jpeg" alt="Empresa Logo"/>
+                    <h1>RentaCar App</h1>
+                </div>
+                    
+                <div id="user_info">
+                    <i class="fa-solid fa-circle-user"></i>
+                    <p>Hola <strong>Invitado</strong></p>
+                    <p>
+                        <a href="/login">Iniciar Sesión</a> o <a href="/signup">Regístrese</a>
+                        <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                    </p>
+                </div>
+            </div> 
+            <nav>
+                <ul id="listamenu">
+                    <li><a href="/">Inicio</a></li>
+                    <li><a href="/tarifas">Tarifas</a></li>
+                    <li><a href="/tos">Términos y condiciones</a></li>
+                    <li><a href="/about">Sobre Nosotros</a></li>
+                </ul>
+            </nav>
+        </header>
+        {% block content %} 
+        {% endblock %}
+                
+    </main>
+ </body>
+</html>

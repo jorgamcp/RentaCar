@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+{% block content %}
+<section id="internal">
+    <header>
+        <h2>Sobre Nosotros</h2>
+    </header>
+    <section id="about">
+        <div>
+            <img src="static/images/rentacar/rentacar_image_04.jpeg" alt="RentaCar Image" />
+            <h3>RentaCar S.L 25 años</h3>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nisi modi, voluptas, ratione quia atque eligendi
+                illo quod cumque, dicta ex nostrum! Quam hic cupiditate aperiam explicabo quibusdam, repellendus ut totam!
+            </p>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nisi modi, voluptas, ratione quia atque eligendi
+                illo quod cumque, dicta ex nostrum! Quam hic cupiditate aperiam explicabo quibusdam, repellendus ut totam!
+            </p>
+         
+            
+        </div>
+        
+        <section id="contact">
+            <header>
+                <h2>Póngase en contacto con nosotros.</h2>
+            </header>
+            <p>Para contactar rellene el siguiente formulario y recibirá una respuesta de nuestros agentes en la mayor
+                brevedad posible.</p>
+            <p>Muchas gracias por contactar y confiar en RentaCar SL.</p>
+            <form action="">
+                <label for="name">Su Nombre</label><br />
+                <input type="text" id="name" name="name" required /><br />
+
+                <label for="surname">Su(s) Apellido(s)</label><br />
+                <input type="text" id="surname" name="surname" required /><br />
+
+                <label for="email">Su correo electrónico</label><br />
+                <input type="email" id="email" name="email" required /><br />
+
+                <label for="tel">Su Número de Teléfono</label><br />
+                <input type="tel" id="tel" name="tel" required /><br />
+
+                <label for="alreadyclient" id="lalreadyclient" name="lalreadyclient">¿Es cliente y está registrado de
+                    RentaCar?</label><br />
+                <input type="radio" id="alreadyclient_yes" name="alreadyclient" value="Sí" />
+                <label for="alreadyclient_yes">Sí</label>
+                <input type="radio" id="alreadyclient_no" name="alreadyclient" value="No" />
+                <label for="alreadyclient_no">No</label>
+                <input type="radio" id="alreadyclient_nowantanswer" name="alreadyclient" value="NO_CONT" />
+                <label for="alreadyclient_nowantanswer">Prefiero no contestar a esta cuestión</label><br />
+                
+                <label for="reasonconsul">Motivo Consulta</label><br/>
+                <select>
+                    <option value="default-select" selected>-- Seleccione una opción --</option>
+                    <option value="info_general">Información General</option>
+                    <option value="problema_pago">He tenido un problema con el pago</option>
+                    <option value="alquiler_plus">Solicitar un alquiler mayor a 15 días</option>
+                    <option value="solicita_mas_info">Solicitar más información</option>
+                    <option value="otro">Otro Problema (Escribir en el apartado de Mensaje)</option>
+                </select>
+                <br/>
+                <label for="mensaje">Mensaje</label><br />
+                <textarea id="mensaje" name="mensaje"  required></textarea>
+                <br />
+
+                <input type="submit" value="Enviar" />
+            </form>
+        </section>
+    </section>
+
+</section>
+{% endblock %}
