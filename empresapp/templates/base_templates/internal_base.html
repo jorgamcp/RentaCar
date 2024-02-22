@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Empresa APP</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="static/css/layouts/internal_layout.css" />
+    <link rel="shourcut icon" type="image/png" href="{% static 'images/renta_logo.jpeg' %}" />
+</head>
+
+<body>
+    <main id="internal">
+        <header>
+            <h3>INTERNAL MODE!</h3>
+        </header>
+
+        
+        {% block content %}
+        {% endblock %}
+
+    </main>
+    <footer>
+        <p>Copyright 2024 &copy; Rent A Car S.L.</p>
+        <p>Reservados todos los derechos</p>
+    </footer>
+</body>
+
+</html>

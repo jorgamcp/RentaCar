@@ -8,6 +8,8 @@ def index(request):
 def tarifas(request):
     return render(request,template_name='tarifas.html')
 
+def reservar(request):
+    return render(request,template_name="reserva.html")
 def tos(request):
     return render(request,template_name="tos.html")
 
