@@ -13,19 +13,41 @@
 
 <body>
     <main id="internal">
-        <header>
-            <h3>INTERNAL MODE!</h3>
-        </header>
-
-        
+        <nav>
+            <div>
+                <header>
+                    <div>
+                        <div class="container-logo-title">
+                            <img id="logo" src="static/images/renta_logo.jpeg" alt="Empresa Logo"/>
+                            <h1>RentaCar App</h1>
+                            <h3>Internal Mode</h3>
+                        </div>
+                        
+                    </div> 
+                </header>
+                <ul id="listamenu">
+                    <li><a href="/">Inicio</a></li>
+                    <li><a href="/tarifas">Tarifas</a></li>
+                    <li><a href="/reservar">Iniciar Reserva</a></li>
+                    <li><a href="/tos">Términos y condiciones</a></li>
+                    <li><a href="/about">Sobre Nosotros</a></li>
+                </ul>
+                <div id="user_info">
+                    <i class="fa-solid fa-circle-user"></i>
+                    <p>Hola <strong>Invitado/a</strong></p>
+                    <p>
+                        <a href="/login">Iniciar Sesión</a> o <a href="/signup">Regístrese</a>
+                        <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                    </p>
+                </div>
+           
+            </div>
+        </nav>
         {% block content %}
         {% endblock %}
-
+        
     </main>
-    <footer>
-        <p>Copyright 2024 &copy; Rent A Car S.L.</p>
-        <p>Reservados todos los derechos</p>
-    </footer>
+  
 </body>
 
 </html>
