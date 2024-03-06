@@ -100,6 +100,11 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+AUTHENTICATIONS_BACKENDS = {
+    'empresapp.auth.Email_OR_Username'
+}
+AUTH_USER_MODEL = "empresapp.User"
+
 
 # Internationalization
 # https://docs.djangoproject.com/en/5.0/topics/i18n/

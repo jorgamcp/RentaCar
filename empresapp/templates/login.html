@@ -1,0 +1,15 @@
+{% extends "base_templates/internal_base.html" %}
+{% block content %}
+<section>
+   <header>
+    <h3>INICIAR SESIÓN EN RENTACAR</h3>
+   </header>
+   <section id="login-section">
+     <form method="post">
+        {% csrf_token %}
+        {{ form.as_div }}
+        <button type="submit">Entrar</button>
+     </form>
+   </section>
+</section>
+{% endblock content %}

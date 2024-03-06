@@ -1,49 +1,73 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Empresa APP</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="stylesheet" type="text/css" href="static/css/main.css" />
-    <link rel="shourcut icon" type="image/png" href="{% static 'images/renta_logo.jpeg' %}" />
-</head>
-<body>
-    <main id="principal">
-        <header>
-            <div>
-                <div class="container-logo-title">
-                    <img id="logo" src="static/images/renta_logo.jpeg" alt="Empresa Logo"/>
-                    <h1>RentaCar App</h1>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Empresa APP</title>
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+        <link rel="stylesheet" type="text/css" href="static/css/main.css" />
+        <link rel="shourcut icon"
+              type="image/png"
+              href="{% static 'images/renta_logo.jpeg' %}" />
+    </head>
+    <body>
+        <main id="principal">
+            <header>
+                <div>
+                    <div class="container-logo-title">
+                        <img id="logo" src="static/images/renta_logo.jpeg" height="auto" width="auto" alt="Empresa Logo" />
+                        <h1>RentaCar App</h1>
+                    </div>
+                    <div id="user_info">
+                        {% if user.is_authenticated %}
+                            <i class="fa-solid fa-circle-user"></i>
+                            <p>
+                                Bienvenido/a <strong>{{ user.display_name }}</strong>
+                            </p>
+                            <p>
+                                <a href="{% url 'logout'%}">Cerrar Sesión</a>
+                                <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                            </p>
+                        {% else %}
+                            <i class="fa-solid fa-circle-user"></i>
+                            <p>
+                                Hola <strong>Invitado/a</strong>
+                            </p>
+                            <p>
+                                <a href="{% url 'login' %}">Iniciar Sesión</a> o <a href="/signup">Regístrese</a>
+                                <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                            </p>
+                        {% endif %}
+                    </div>
                 </div>
-                    
-                <div id="user_info">
-                    <i class="fa-solid fa-circle-user"></i>
-                    <p>Hola <strong>Invitado/a</strong></p>
-                    <p>
-                        <a href="/login">Iniciar Sesión</a> o <a href="/signup">Regístrese</a>
-                        <i class="fa-solid fa-arrow-right-to-bracket"></i>
-                    </p>
-                </div>
-            </div> 
-            <nav>
-                <ul id="listamenu">
-                    <li><a href="/">Inicio</a></li>
-                    <li><a href="/tarifas">Tarifas</a></li>
-                    <li id="reserva"><a href="/reservar">Iniciar Reserva</a></li>
-                    <li><a href="/tos">Términos y condiciones</a></li>
-                    <li><a href="/about">Sobre Nosotros</a></li>
-                </ul>
-            </nav>
-        </header>
-        {% block content %} 
-        {% endblock %}
-                
-    </main>
-    <footer>
-        <p>Copyright 2024 &copy; Rent A Car S.L.</p>
-        <p>Reservados todos los derechos</p>
-    </footer>
- </body>
+                <nav>
+                    <ul id="listamenu">
+                        <li>
+                            <a href="/">Inicio</a>
+                        </li>
+                        <li>
+                            <a href="/tarifas">Tarifas</a>
+                        </li>
+                        <li id="reserva">
+                            <a href="/reservar">Iniciar Reserva</a>
+                        </li>
+                        <li>
+                            <a href="/tos">Términos y condiciones</a>
+                        </li>
+                        <li>
+                            <a href="/about">Sobre Nosotros</a>
+                        </li>
+                    </ul>
+                </nav>
+            </header>
+            {% block content %}
+            {% endblock content %}
+        </main>
+        <footer>
+            <p>Copyright 2024 (c) Rent A Car S.L.</p>
+            <p>Reservados todos los derechos</p>
+        </footer>
+    </body>
 </html>

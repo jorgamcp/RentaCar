@@ -6,7 +6,14 @@
    </header>
    <section id="expl-reserva-seccion">
       <p>POR FAVOR Lea atentamente:</p>
-       
+      {% if user.is_authenticated %}
+         <h3>Bienvenido/a {{user.display_name}}</h3>
+      {% else %}
+         <p>Va ha comenzar los pasos para alquilar un vehículo, para ello debe tener una cuenta registrada.</p>
+         <p>Usted No se ha autenticado porque no ha iniciado sesión</p>
+         <p>Para iniciar sesión haga clic </p> <a href="/login">aquí</a>
+      {% endif %}
+      
    </section>
 </section>
 {% endblock %}

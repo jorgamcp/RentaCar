@@ -18,12 +18,12 @@
                 <header>
                     <div>
                         <div class="container-logo-title">
-                            <img id="logo" src="static/images/renta_logo.jpeg" alt="Empresa Logo"/>
+                            <img id="logo" src="static/images/renta_logo.jpeg" alt="Empresa Logo" />
                             <h1>RentaCar App</h1>
                             <h3>Internal Mode</h3>
                         </div>
-                        
-                    </div> 
+
+                    </div>
                 </header>
                 <ul id="listamenu">
                     <li><a href="/">Inicio</a></li>
@@ -34,20 +34,30 @@
                 </ul>
                 <div id="user_info">
                     <i class="fa-solid fa-circle-user"></i>
+                    {% if user.is_authenticated %}
+                        <p>Hola <strong>{{user.display_name}}</strong></p>
+                        <p>
+                            <a href="/logout">Cerrar Sesión</a>
+                            <i class="fa-solid fa-arrow-left-to-bracket"></i>
+                        </p>
+                    {% else %}
+
                     <p>Hola <strong>Invitado/a</strong></p>
+
                     <p>
                         <a href="/login">Iniciar Sesión</a> o <a href="/signup">Regístrese</a>
                         <i class="fa-solid fa-arrow-right-to-bracket"></i>
                     </p>
+                    {% endif %}
                 </div>
-           
+
             </div>
         </nav>
         {% block content %}
         {% endblock %}
-        
+
     </main>
-  
+
 </body>
 
 </html>
